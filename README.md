@@ -1,5 +1,6 @@
 # PG800C Synthesizer Programmer 
-**Clone the PG-800 programmer for Roland JX-10, MKS-70 and JX-8P or get creative. Here are some ideas for this library**
+**Clone the PG-800 programmer for Roland JX-10, MKS-70 and JX-8P. 
+Or get creative, here are some ideas for this library**
 
 PG-800C::buzz & possibilities
 -----------------------------
