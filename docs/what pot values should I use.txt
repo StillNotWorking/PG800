@@ -1,0 +1,19 @@
+PG-800C::technical - what pot values should I use
+Multiposition switches on PG-800 are actually short 15mm sliders with dents. If you rather have switches see schematics for Roland's MPG-80 midi controller for inspiration. Just remember to scale resistor values. I’ll post some examples when I have tested data output.
+
+Original PG-800 feed 2.5Volt over 100k pots. Current draw should be around 1.1mA total with 44 pots. As ADC inputs on Arduino boards prefer pots in the range 1k-10k we can’t expect to match this number. At least not if we want to connect directly with the input without use of op-amp for impedance matching.
+
+Connected to 5V with 10k pots expected current draw is 22mA. I don’t think we’ll get into trouble even though we load synths power supply 20 times higher with this section of the circuit.
+
+Although we can get power consumption down using lower reference voltage I’m unsure how that might impact on how prone to noise our circuit might get. But on the other side, a good clean and low reference voltage to also feed all pots might be exactly what’s needed here?
+
+Table show current draw with different pot values and voltages:
+Pots	10k/227ohm	5k/114ohm	1k/23ohm
+5V	22mA		44mA		220mA
+3.3V	15mA		29mA		145mA
+1.8V	8mA		16mA		80mA
+Here is how we got to those numbers:
+
+5V / 10000 ohm = 0,0005 A * 44 pots = 0,022 A = 22mA
+
+5V / 0,022 A = 227,2727272727273 ohm total resistance for all 44 10k pots in parallel
